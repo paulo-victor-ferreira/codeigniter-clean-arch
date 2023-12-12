@@ -6,7 +6,6 @@ use App\Domain\Contracts\PDFGenerator;
 
 class DomPDFAdapter implements PDFGenerator
 {
-
     public function loadTemplate(string $template, $data = [])
     {
     }
