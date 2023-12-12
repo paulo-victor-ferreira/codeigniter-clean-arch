@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\UseCases\User\dtos;
+namespace App\Domain\UseCases\User\dtos;
 
 final class CreateUserOutput
 {

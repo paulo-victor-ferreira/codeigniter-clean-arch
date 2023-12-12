@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Services\UseCases\User;
+namespace App\Domain\UseCases\User;
 
 
-use App\Services\UseCases\User\dtos\CreateUserInput;
-use App\Services\UseCases\User\dtos\CreateUserOutput;
+use App\Domain\UseCases\User\dtos\CreateUserInput;
+use App\Domain\UseCases\User\dtos\CreateUserOutput;
 
 final class CreateUser
 {
