@@ -43,6 +43,7 @@ class Database extends Config
         'failover'     => [],
         'port'         => 3306,
         'numberNative' => false,
+        'namespace'    => 'App\Database\Models',
     ];
 
     /**
