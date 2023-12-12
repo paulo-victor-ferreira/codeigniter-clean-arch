@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Infra\Controllers;
+namespace App\Application\Controllers;
 
-use App\Services\UseCases\User\CreateUser;
-use App\Services\UseCases\User\dtos\CreateUserInput;
+use App\Domain\UseCases\User\CreateUser;
+use App\Domain\UseCases\User\dtos\CreateUserInput;
 
 class UserController extends BaseController
 {
     public function create()
     {
-
         $input = new CreateUserInput();
         $input->name = $this->request->getPost('name');
 
