@@ -59,9 +59,9 @@ abstract class BaseController extends Controller
     /**
      * Json response function
      *
-     * @return void
+     * @return CodeIgniter\HTTP\ResponseInterface
      */
-    protected function json(array $data = [], int $statusCode = 200)
+    protected function json($data = [], int $statusCode = 200)
     {
         return $this->response->setStatusCode($statusCode)->setJSON($data);
     }
@@ -69,7 +69,7 @@ abstract class BaseController extends Controller
     /**
      * View response function
      *
-     * @return void
+     * @return null|string
      */
     protected function view(string $name, array $data = [], array $options = [])
     {
