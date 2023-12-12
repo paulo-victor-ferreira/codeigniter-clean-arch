@@ -2,13 +2,18 @@
 
 namespace App\Infra\Controllers;
 
-use CodeIgniter\HTTP\RequestInterface;
-use CodeIgniter\HTTP\ResponseInterface;
+use App\Services\UseCases\User\CreateUser;
+use App\Services\UseCases\User\dtos\CreateUserInput;
 
 class UserController extends BaseController
 {
-    public function index()
+    public function create()
     {
-        return $this->json(['d' => '2']);
+
+        $input = new CreateUserInput();
+        $input->name = $this->request->getPost('name');
+
+        $output = (new CreateUser())->execute($input);
+        return $this->json($output);
     }
 }
