@@ -2,6 +2,7 @@
 
 namespace App\Domain\UseCases\User;
 
+use App\Domain\Entity\User;
 use App\Domain\Repository\UserRepository;
 use App\Domain\UseCases\User\dtos\CreateUserInput;
 use App\Domain\UseCases\User\dtos\CreateUserOutput;
@@ -17,14 +18,13 @@ final class CreateUser
 
     public function execute(CreateUserInput $input): CreateUserOutput
     {
-        // Lógica para passar input para Entity....
-        $userEntity = $input;
+        $newUser = $this->userRepository->create(User::fromData($input));
 
-        // Repositório...
-        $newUser = $this->userRepository->create($userEntity);
-
-        $output = new CreateUserOutput();
-        $output->id = $newUser->id;
+        $output = new CreateUserOutput(
+            $newUser->id,
+            $newUser->name,
+            $newUser->email,
+        );
 
         return $output;
     }
